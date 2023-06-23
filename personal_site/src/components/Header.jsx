@@ -12,20 +12,23 @@ function nav() {
         </nav>
     )
 }
+// 
+
+    function CostomLink({href, children, ...prop}) {
+        const path = useResolvedPath(href)
+        // console.log(path)
+        const isActive = useMatch({path: path.pathname, end:false})
+        return (
+            <li className={isActive ? "active" : ""}>
+                <Link to={href} {...prop}>
+                    {children}
+                </Link>
+            </li>
+        )
+
+    }
 
 
-function CostomLink({href, children, ...prop}) {
-    const path = useResolvedPath(href)
-    // console.log(path)
-    const isActive = useMatch({path: path.pathname, end:false})
-    return (
-        <li className={isActive ? "active" : ""}>
-            <Link to={href} {...prop}>
-                {children}
-            </Link>
-        </li>
-    )
 
-}
 
 export default nav
