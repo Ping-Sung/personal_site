@@ -1,5 +1,5 @@
 """
-URL configuration for personalSiteBackend project.
+URL configuration for backend project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,8 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls')), # add all the urls from api/urls.py after the localhost -> localhost:8000/api/
+    path('api/diary/', include('diary.urls')), # add all the urls from diary/urls.py after the localhost -> localhost:8000/api/diary/
 ]
