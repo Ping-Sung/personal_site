@@ -1,8 +1,7 @@
 import requests
 
 # URL for the web service
-GET_endpoint = 'http://localhost:8000/api/diary/1/'
-POST_endpoint = 'http://localhost:8000/api/diary/delete/1/'
+endpoint = 'http://localhost:8000/api/diary/'
 
 
 # If the service is authenticated, set the key or token
@@ -11,6 +10,6 @@ POST_endpoint = 'http://localhost:8000/api/diary/delete/1/'
 # print(get_response.json())
 # print(get_response.status_code)
 
-post_response = requests.delete(POST_endpoint, json={'title': 'updated', 'content': 'updated'})
-print(post_response.json())
+post_response = requests.get(endpoint, data={'title': 'new one'})
 print(post_response.status_code)
+print(post_response.json())

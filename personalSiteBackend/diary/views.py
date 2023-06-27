@@ -1,19 +1,38 @@
-from rest_framework import generics
+from rest_framework import generics, mixins, authentication
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.shortcuts import get_object_or_404
 
+from api.mixinpermissions import StaffEditorPermissionsMinxin
+from api.permissions import IsStaffEditorPermissions
+from rest_framework.permissions import IsAdminUser
 from .models import Diary
 from .serializers import DiarySerializer
 
 # generic view is a view that abstracts common patterns when working with views and models.
-class DiaryDetailApiView(generics.RetrieveAPIView):
+class DiaryDetailApiView(
+    # StaffEditorPermissionsMinxin,
+    generics.RetrieveAPIView
+    ):
+    authentication_classes = [authentication.SessionAuthentication, authentication.TokenAuthentication]
+    permission_classes = [IsStaffEditorPermissions, IsAdminUser]
+    # Try to print permission_classes inherited from StaffEditorPermissionsMinxin
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        print(self.permission_classes)  # 打印permission_classes
+
     queryset = Diary.objects.all()
     serializer_class = DiarySerializer
 
 class DiaryListCreateApiView(generics.ListCreateAPIView):
     queryset = Diary.objects.all()
     serializer_class = DiarySerializer
+
+    # Both POST and GET requests will pass the permission check.
+
+    # the following permission_classes method is called when a POST request is made. 
+    # A GET request will not pass the permission check.
+    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
         title = serializer.validated_data.get('title')
@@ -23,19 +42,58 @@ class DiaryListCreateApiView(generics.ListCreateAPIView):
         serializer.save(content=content)
         print(serializer.validated_data)
 
-class DiaryListApiView(generics.ListAPIView):
-    queryset = Diary.objects.all()
-    serializer_class = DiarySerializer
 
 class DiaryUpdateApiView(generics.UpdateAPIView):
+
     queryset = Diary.objects.all()
     serializer_class = DiarySerializer
     lookup_field = 'pk'
 
 class DiaryDeleteApiView(generics.DestroyAPIView):
+
     queryset = Diary.objects.all()
     serializer_class = DiarySerializer
     lookup_field = 'pk'
+
+
+# mixins class can extend the functionality of a class, so that it can be used in multiple classes.
+
+class DiaryMixinApiView(
+    mixins.CreateModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.ListModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+    generics.GenericAPIView
+    ):
+    # queryset and serializer_class are required for generics.GenericAPIView.
+    queryset = Diary.objects.all()
+    serializer_class = DiarySerializer
+    lookup_field = 'pk'
+    
+
+    def get(self, request, *args, **kwargs):
+        if kwargs.get('pk'):
+            return self.retrieve(request, *args, **kwargs)
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+    
+    # perform_create is a method that is called when a POST request is made.
+    def perform_create(self, serializer):
+        title = serializer.validated_data.get('title')
+        content = serializer.validated_data.get('content') or None
+        if content == None:
+            content = title
+        serializer.save(content=content)
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+    
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+
 
 
 @api_view(['GET','POST'])
