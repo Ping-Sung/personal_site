@@ -1,7 +1,7 @@
 import requests
 from getpass import getpass
 
-endpoint = 'http://localhost:8000/api/diary/'
+endpoint = 'http://localhost:8000/api/diary/mixins/8/'
 auth_endpoint = 'http://localhost:8000/api/token/'
 pwd = getpass('Enter Password: ')
 data = {
@@ -16,6 +16,5 @@ if auth_response.status_code == 200:
     headers = {
         'Authorization': 'Bearer ' + auth_response.json()['token']
     }
-    get_response = requests.get(endpoint, headers=headers)
+    get_response = requests.put(endpoint, headers=headers, data={'title': '9', 'content': 'fdasdfsafsa'})
     print(get_response.status_code)
-    print(get_response.json())

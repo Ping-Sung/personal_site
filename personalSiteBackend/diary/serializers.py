@@ -9,7 +9,6 @@ class DiarySerializer(serializers.ModelSerializer):
         lookup_field='pk'
     )
     delete_url = serializers.SerializerMethodField(read_only=True)
-    email = serializers.EmailField(write_only=True)
 
     class Meta:
         model = Diary
@@ -21,15 +20,13 @@ class DiarySerializer(serializers.ModelSerializer):
             'combination',
             'url',
             'delete_url',
-            'email',
+
         ]
 
     def create(self, validated_data):
-        print(validated_data.pop('email'))
         return super().create(validated_data)
     
     def update(self, instance, validated_data):
-        print(validated_data.pop('email'))
         return super().update(instance, validated_data)
 
     def get_delete_url(self, obj):

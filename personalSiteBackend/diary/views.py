@@ -3,8 +3,6 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.shortcuts import get_object_or_404
 
-from api.mixinpermissions import StaffEditorPermissionsMinxin
-from api.permissions import IsStaffEditorPermissions
 from rest_framework.permissions import IsAdminUser
 from .models import Diary
 from .serializers import DiarySerializer
@@ -14,8 +12,7 @@ class DiaryDetailApiView(
     # StaffEditorPermissionsMinxin,
     generics.RetrieveAPIView
     ):
-    authentication_classes = [authentication.SessionAuthentication, authentication.TokenAuthentication]
-    permission_classes = [IsStaffEditorPermissions, IsAdminUser]
+
     # Try to print permission_classes inherited from StaffEditorPermissionsMinxin
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

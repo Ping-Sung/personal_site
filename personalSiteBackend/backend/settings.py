@@ -41,9 +41,13 @@ INSTALLED_APPS = [
     'diary',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', # CORS
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -135,3 +141,12 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticatedOrReadOnly",
     ]
 }
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:5173',
+    # Add more origins as needed
+]
+
+CORS_ALLOW_CREDENTIALS = False
+
+CORS_ORIGIN_ALLOW_ALL = True

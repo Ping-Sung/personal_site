@@ -19,9 +19,9 @@ urlpatterns = [
     # path('function_create/', views.diary_create_view),
     # path('function_create/<int:pk>/', views.diary_create_view),
 
-    # # generic mixins view (combination of generic views, use for RESTful APIs)
-    # # all CRUD operations are done in the following minin views.
-    # path('mixins/', views.DiaryMixinApiView.as_view()),
-    # path('mixins/<int:pk>/', views.DiaryMixinApiView.as_view()),
+    # generic mixins view (combination of generic views, use for RESTful APIs)
+    # all CRUD operations are done in the following minin views.
+    path('mixins/', views.DiaryMixinApiView.as_view()),
+    path('mixins/<int:pk>/', views.DiaryMixinApiView.as_view()),
 
 ]
