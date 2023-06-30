@@ -61,10 +61,7 @@ export default function BlogDetail() {
 
         const requestOptions = {
             method: 'PUT',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + isAuthenticated,
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         };
         // 欠 authentication
@@ -92,56 +89,50 @@ export default function BlogDetail() {
 
     }
 
-    function EditBlog() {
-        return (
-            <div className="diary-form" >
-                <h1>Edit Diary</h1>
-
-                <form onSubmit={handleSubmit}>
-                    <input
-                        className='diary-title'
-                        type="text"
-                        placeholder="Type the title here"
-                        onChange={handleChange}
-                        name="title"
-                        value={blogDetail.title}
-                    />
-
-                    <MDEditor
-                        value={blogDetail.content}
-                        onChange={(val) => setBlogDetail(prev => {
-                            return {
-                                ...prev,
-                                'content': val
-                            }
-                        })}
-                    />
-                    <div className='diary-btns'>
-                        <button type="button" className='edit-btn btn-cancel' onClick={() => setIsEdit(false)}>Cancel</button>
-                        <button className='edit-btn'>save</button>
-                    </div>
-
-                </form>
-            </div>
-        )
-    }
-
-    function ShowBlogDetail() {
-        return (
-            <div className='blog-detail-content'>
-                <h1>{blogDetail.title}</h1>
-                <p>{blogDetail.date}</p>
-                <MDEditor.Markdown source={blogDetail.content} style={{ whiteSpace: 'pre-wrap' }} />
-                <Comments />
-                {isAuthenticated && <button className='edit-btn' onClick={() => setIsEdit(true)}>Edit</button>}
-            </div>
-        )
-    }
+    
 
     return (
         <div className='blog-detail' data-color-mode="light">
             {
-                (isEdit) ? <EditBlog /> : <ShowBlogDetail />
+                (isEdit) ?
+                    <div className="diary-form" >
+                        <h1>Edit Diary</h1>
+
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                className='diary-title'
+                                type="text"
+                                placeholder="Type the title here"
+                                onChange={handleChange}
+                                name="title"
+                                value={blogDetail.title}
+                            />
+
+                            <MDEditor
+                                value={blogDetail.content}
+                                onChange={(val) => setBlogDetail(prev => {
+                                    return {
+                                        ...prev,
+                                        'content': val
+                                    }
+                                })}
+                            />
+                            <div className='diary-btns'>
+                                <button type="button" className='edit-btn btn-cancel' onClick={() => setIsEdit(false)}>Cancel</button>
+                                <button className='edit-btn'>save</button>
+                            </div>
+
+                        </form>
+                    </div>
+                    :
+                    <div className='blog-detail-content'>
+                        <h1>{blogDetail.title}</h1>
+                        <p>{blogDetail.date}</p>
+                        <MDEditor.Markdown source={blogDetail.content} style={{ whiteSpace: 'pre-wrap' }} />
+                        <Comments />
+                        {isAuthenticated && <button className='edit-btn' onClick={() => setIsEdit(true)}>Edit</button>}
+                    </div>
+
             }
 
             {
