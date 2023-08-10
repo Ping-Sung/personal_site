@@ -16,7 +16,7 @@
     font-family: 'Vollkorn', serif !important;
 }
 
-.header-content{
+.header-content {
     height: 100%;
     padding: 80px 15px 40px;
     background-color: #546a76ff;
@@ -25,46 +25,73 @@
     justify-content: flex-start;
 }
 
-.site-title{
-    font-size: 40px;
+.site-title {
+    font-size: 2.2rem;
     border-bottom: 2px solid #e0e1e9ff;
 }
 
-.header a{
-    text-decoration:none;
+
+.header a {
+    text-decoration: none;
     color: #e0e1e9ff;
 }
-.header a:hover{
-    text-decoration:none;
+
+.header a:hover {
+    text-decoration: none;
     color: #ddfdfeff;
 }
-.header ul{
+
+.header ul {
     list-style-type: none;
     padding: 0;
 }
 
-.actived a{
+.actived a {
     color: #ddfdfeff;
 }
 
-.menu{
+.menu {
+    font-size: 1.2rem;
     margin-top: 50px;
+    /* height: 60%; */
     overflow: auto;
 }
 
-.menu-link{
-    font-size: 25px;
+.menu-link {
     margin: 20px 0;
 }
 
 .social-links {
-    height: 25px;
+    height: 1.8em;
     display: flex;
     justify-content: space-between;
     /* padding: 20px; */
     margin-top: auto;
 }
 
+.social-links a {
+    width: auto;
+    height: auto;
+}
+
+.social-links a:hover {
+    color: #ddfdfeff;
+}
+
 .social-links-icons {
-    font-size: 32px;
+    font-size: 1.6rem;
+}
+
+@media (min-width: 2500px) {
+    .site-title {
+        font-size: 4.5em;
+    }
+
+    .menu {
+        font-size: 2.5rem;
+    }
+
+    .social-links-icons {
+        font-size: 3rem;
+    }
 }

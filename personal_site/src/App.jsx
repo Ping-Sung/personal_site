@@ -2,6 +2,7 @@
 import Home from "./components/Home";
 import Resume from "./components/Resume";
 import Projects from './components/Projects'
+import Academic from './components/Academic'
 import Header from "./components/Header";
 import Blogs from "./components/Blogs";
 import CreateDiary from "./components/CreateDiary";
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Projects" element={<Projects />} />
+            <Route path="/Academic" element={<Academic />} />
             <Route path="/Resume" element={<Resume />} />
             <Route path="/Blogs" element={<Blogs />} />
             <Route path="/CreateDiary" element={<CreateDiary />} />

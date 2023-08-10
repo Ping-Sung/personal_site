@@ -2,11 +2,10 @@
 import React from 'react'
 import '../css/blogs.css'
 import RemovalModal from './RemovalModal'
-import { useNavigate } from 'react-router-dom'
+import { api_path } from '../api_path'
 
 function Blogs() {
-    const navigate = useNavigate();
-    const endpoint = "http://localhost:8000/api/diary/mixins/"
+    const endpoint = api_path + "api/diary/mixins/"
     const [blogs, setblogs] = React.useState([])
     const [isAuthenticated, setIsAuthenticated] = React.useState(null);
     React.useEffect(() => {
@@ -15,7 +14,6 @@ function Blogs() {
         if (loggedInUser) {
             setIsAuthenticated(loggedInUser);
         }
-        console.log('blogs isAuthenticated', isAuthenticated)
     }, []);
 
 
@@ -29,39 +27,30 @@ function Blogs() {
             setblogs(data)
         })
             .catch(err => console.log(err))
-        // console.log('run get', blogs)
     }
 
 
+
     function deleteBlog(blog_id) {
-        console.log('delete', blog_id)
         const requestOptions = {
             method: 'DELETE',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + isAuthenticated,
-            },
+            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + isAuthenticated },
             // body: JSON.stringify(formData)
         };
-        // 欠 authentication
-        const del_url = endpoint + blog_id
-        console.log(del_url)
-        fetch(del_url, requestOptions).then(res => {
 
-            console.log('delete success')
+        const del_url = endpoint + blog_id
+        fetch(del_url, requestOptions).then(res => {
+            res.json()
             // redirect to /Blogs
-            // navigate('/Blogs')
             window.location.href = "/Blogs"
         })
             .catch(err => console.log(err))
     }
 
-    // console.log('blogs', blogs)
-
     // display the blogs 
     return (
         <div className="blogs">
-            <h1>Here is my Blogs</h1>
+            <h1>Blogs</h1>
             {
                 blogs.length > 0 ?
                     blogs.map((blog) => (

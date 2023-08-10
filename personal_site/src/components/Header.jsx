@@ -11,7 +11,7 @@ import { Link, useResolvedPath, useMatch, useNavigate } from "react-router-dom"
 // eslint-disable-next-line react-refresh/only-export-components, react/prop-types
 function CostomLink({ href, children, ...prop }) {
     const path = useResolvedPath(href)
-    // console.log(path)
+
     const isActive = useMatch({ path: path.pathname, end: false })
     return (
         <div className='menu-link'>
@@ -29,6 +29,12 @@ function Header() {
 
     const [isAuthenticated, setIsAuthenticated] = React.useState(null);
     const loggedInUser = localStorage.getItem("authenticated");
+    const socialAccountUrls = {
+        facebook: 'https://www.facebook.com/chieh.ying.1998/',
+        instagram: 'https://www.instagram.com/shiori_lai/',
+        github: 'https://github.com/jamie870116',
+        linkedin: 'https://www.linkedin.com/in/chiehying-lai/',
+    }
 
     const navigate = useNavigate();
 
@@ -52,6 +58,7 @@ function Header() {
                 {isAuthenticated ?
                     <ul className='menu'>
                         <CostomLink href="/Resume">Resume</CostomLink>
+                        <CostomLink href="/Academic">Academic</CostomLink>
                         <CostomLink href="/Projects">Projects</CostomLink>
                         <CostomLink href="/Blogs">Blogs</CostomLink>
                         <CostomLink href="/CreateDiary">Create Diary</CostomLink>
@@ -60,6 +67,7 @@ function Header() {
                     :
                     <ul className='menu'>
                         <CostomLink href="/Resume">Resume</CostomLink>
+                        <CostomLink href="/Academic">Academic</CostomLink>
                         <CostomLink href="/Projects">Projects</CostomLink>
                         <CostomLink href="/Blogs">Blogs</CostomLink>
                         <CostomLink href="/Login">Login</CostomLink>
@@ -67,10 +75,10 @@ function Header() {
                 }
 
                 <div className='social-links'>
-                    <a><FontAwesomeIcon className="social-links-icons" icon={faFacebookSquare} /></a>
-                    <a><FontAwesomeIcon className="social-links-icons" icon={faInstagramSquare} /></a>
-                    <a><FontAwesomeIcon className="social-links-icons" icon={faGithubSquare} /></a>
-                    <a><FontAwesomeIcon className="social-links-icons" icon={faLinkedin} /></a>
+                    <a href={socialAccountUrls.facebook} target="_blank" rel="noreferrer noopener"><FontAwesomeIcon className="social-links-icons" icon={faFacebookSquare} /></a>
+                    <a href={socialAccountUrls.instagram} target="_blank" rel="noreferrer noopener"><FontAwesomeIcon className="social-links-icons" icon={faInstagramSquare} /></a>
+                    <a href={socialAccountUrls.github} target="_blank" rel="noreferrer noopener"><FontAwesomeIcon className="social-links-icons" icon={faGithubSquare} /></a>
+                    <a href={socialAccountUrls.linkedin} target="_blank" rel="noreferrer noopener"><FontAwesomeIcon className="social-links-icons" icon={faLinkedin} /></a>
                     {isAuthenticated && <a href="" onClick={logout}><FontAwesomeIcon className="social-links-icons" icon={faRightFromBracket} /></a>}
                 </div>
             </div>

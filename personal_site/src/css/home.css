@@ -6,7 +6,7 @@
     align-items: center;
     color: #546A76;
     position: relative;
-    top: 50%;  
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -17,31 +17,36 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 50%;
+    text-align: justify;
+    text-justify: auto;
+    margin-right: 5em;
 }
-.home-title h1{
+
+.home-title h1 {
     margin: 0;
-    color:  #1D1128;
+    color: #1D1128;
 }
 
 .home-title {
-    width: 70%;
+    /* width: 70%; */
     border-bottom: 2px solid #546A76;
     margin-bottom: 10px;
     /* margin-right: 50px; */
-
 }
 
-.home-text{
+.home-text {
     /* display: flex; */
-    max-width: 450px;
+    /* max-width: 450px; */
+    /* max-width: 40%; */
     word-wrap: break-word;
     margin: 0;
     padding: 0;
 }
 
 .home-img {
-    width: 350px;
+    max-width: 40%;
+    /* width: 350px; */
 }
 
 .home-img img {

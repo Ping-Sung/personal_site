@@ -3,7 +3,7 @@ import React from 'react'
 import MDEditor from '@uiw/react-md-editor';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-
+import { api_path } from '../api_path'
 import Comments from '../components/Comments'
 
 import '../css/blogDetail.css'
@@ -14,18 +14,19 @@ export default function BlogDetail() {
     const blogID = useParams().id
     // console.log(blogID)
 
-    const endpoint = "http://localhost:8000/api/diary/mixins/" + blogID + '/'
+    const endpoint = api_path + "api/diary/mixins/" + blogID + '/'
     const [isEdit, setIsEdit] = React.useState(false)
     const [blogDetail, setBlogDetail] = React.useState({})
     const navigate = useNavigate();
 
     const [isAuthenticated, setIsAuthenticated] = React.useState(localStorage.getItem("authenticated"));
     React.useEffect(() => {
+        getBlogDetail()
         const loggedInUser = localStorage.getItem("authenticated");
         if (loggedInUser) {
             setIsAuthenticated(loggedInUser);
         }
-        console.log('detail isAuthenticated', isAuthenticated)
+
     }, []);
 
 
@@ -44,16 +45,11 @@ export default function BlogDetail() {
     }
 
 
-    React.useEffect(() => {
-        getBlogDetail()
-    }
-        , [])
-    // console.log('detail ', blogDetail)
+
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log(blogDetail.title)
-        console.log(blogDetail.content) // string
+
         const formData = {
             'title': blogDetail.title,
             'content': blogDetail.content
@@ -61,10 +57,10 @@ export default function BlogDetail() {
 
         const requestOptions = {
             method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + isAuthenticated },
             body: JSON.stringify(formData)
         };
-        // 欠 authentication
+
         fetch(endpoint, requestOptions).then(res => {
             res.json()
             // redirect to /Blogs
@@ -73,13 +69,12 @@ export default function BlogDetail() {
             navigate("/Blogs/" + blogID + '/');
         })
             .catch(err => console.log(err))
-        // props.createStudent(formData)
         // .then(data => console.log(data)); 
-        // console.log(formData)
+
     }
 
     function handleChange(event) {
-        console.log(event.target.value)
+        // console.log(event.target.value)
         setBlogDetail(prev => {
             return {
                 ...prev,
@@ -88,8 +83,6 @@ export default function BlogDetail() {
         })
 
     }
-
-    
 
     return (
         <div className='blog-detail' data-color-mode="light">

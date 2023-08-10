@@ -1,26 +1,25 @@
-
 /* :root refers to the root element of the whole html, usually <html></html> */
 
-html{
-    --paynes-gray: #546a76ff;
-    --dark-purple: #1d1128ff;
-    --emerald: #26c485ff;
-    --ghost-white: #e0e1e9ff;
-    --light-cyan: #ddfdfeff;
-    font-family: 'Vollkorn', serif !important;
+html {
+  --paynes-gray: #546a76ff;
+  --dark-purple: #1d1128ff;
+  --emerald: #26c485ff;
+  --ghost-white: #e0e1e9ff;
+  --light-cyan: #ddfdfeff;
+  font-family: 'Vollkorn', serif !important;
 }
 
 .container {
   width: 75%;
   height: 100vh;
-  float:right;
+  float: right;
   margin-top: 0px;
   min-width: 75%;
   font-family: 'Vollkorn', serif !important;
 
 }
 
-.main-content{
+.main-content {
   /* padding: 100px 50px 40px; */
   padding: 100px 80px 60px;
   width: 100%;
@@ -28,14 +27,68 @@ html{
   overflow: scroll;
 }
 
-.back-link a{
-  text-decoration:none;
+.back-link a {
+  text-decoration: none;
   color: #26C485;
 }
 
-.back-link a:hover{
-  text-decoration:none;
+.back-link a:hover {
+  text-decoration: none;
   color: #1D1128;
 }
 
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
 
+h2 {
+  font-size: 2.2em;
+  /* line-height: 1.1; */
+}
+
+p {
+  font-size: 1.2em;
+
+}
+
+input {
+  font-size: 1.4em;
+}
+
+a {
+  font-size: 1.4em;
+}
+
+button {
+  font-size: 1.4em;
+}
+
+@media (min-width: 2500px) {
+  h1 {
+    font-size: 4.2em;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 3.2em;
+    /* line-height: 1.1; */
+  }
+
+  p {
+    font-size: 2em;
+
+  }
+
+  a {
+    font-size: 1.6em;
+  }
+
+  button {
+    font-size: 1.8em;
+  }
+
+  input {
+    font-size: 2em;
+  }
+}
