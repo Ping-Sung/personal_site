@@ -54,7 +54,7 @@ function Header() {
     return (
         <div className='header'>
             <div className='header-content'>
-                <Link to="/" className='site-title'>Jamie Lai</Link>
+                <Link to="/" className='site-title'>Kevin Cheng</Link>
                 {isAuthenticated ?
                     <ul className='menu'>
                         <CostomLink href="/Resume">Resume</CostomLink>
