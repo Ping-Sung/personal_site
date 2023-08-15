@@ -15,7 +15,7 @@ import './App.css'
 function App() {
 
   return (
-    <>
+    <div className="root-container">
       <Header />
       <div className="container">
         <div className="main-content">
@@ -33,7 +33,7 @@ function App() {
 
       </div>
 
-    </>
+    </div>
   );
 }
 

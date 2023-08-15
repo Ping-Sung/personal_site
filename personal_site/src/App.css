@@ -9,19 +9,28 @@ html {
   font-family: 'Vollkorn', serif !important;
 }
 
+.root-container{
+  height: 100vh;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .container {
-  width: 75%;
+  width: 60%;
   height: 100vh;
   float: right;
   margin-top: 0px;
-  min-width: 75%;
+  /* min-width: 75%; */
   font-family: 'Vollkorn', serif !important;
 
 }
 
 .main-content {
   /* padding: 100px 50px 40px; */
-  padding: 100px 80px 60px;
+  /* padding: 100px 80px 60px; */
   width: 100%;
   height: 100%;
   overflow: scroll;

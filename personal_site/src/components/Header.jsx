@@ -54,25 +54,33 @@ function Header() {
     return (
         <div className='header'>
             <div className='header-content'>
-                <Link to="/" className='site-title'>Kevin Cheng</Link>
-                {isAuthenticated ?
-                    <ul className='menu'>
-                        <CostomLink href="/Resume">Resume</CostomLink>
-                        <CostomLink href="/Academic">Academic</CostomLink>
-                        <CostomLink href="/Projects">Projects</CostomLink>
-                        <CostomLink href="/Blogs">Blogs</CostomLink>
-                        <CostomLink href="/CreateDiary">Create Diary</CostomLink>
+                <div className="header-upper">
+                    <Link to="/"><h1>Kevin Cheng</h1></Link>
+                    <h2>Full-Stack Developer <br />& AI Researcher</h2>
+                    <p>Passionate Full-Stack developer with 3+ years of experience integrating
+                        business processes. Adept at utilizing Laravel, Django, and ReactJS to
+                        deliver innovative solutions.</p>
 
-                    </ul>
-                    :
-                    <ul className='menu'>
-                        <CostomLink href="/Resume">Resume</CostomLink>
-                        <CostomLink href="/Academic">Academic</CostomLink>
-                        <CostomLink href="/Projects">Projects</CostomLink>
-                        <CostomLink href="/Blogs">Blogs</CostomLink>
-                        <CostomLink href="/Login">Login</CostomLink>
-                    </ul>
-                }
+                    {isAuthenticated ?
+                        <ul className='menu'>
+                            <CostomLink href="/Resume">Resume</CostomLink>
+                            <CostomLink href="/Academic">Academic</CostomLink>
+                            <CostomLink href="/Projects">Projects</CostomLink>
+                            <CostomLink href="/Blogs">Blogs</CostomLink>
+                            <CostomLink href="/CreateDiary">Create Diary</CostomLink>
+
+                        </ul>
+                        :
+                        <ul className='menu'>
+                            <CostomLink href="/Resume">Resume</CostomLink>
+                            <CostomLink href="/Academic">Academic</CostomLink>
+                            <CostomLink href="/Projects">Projects</CostomLink>
+                            <CostomLink href="/Blogs">Blogs</CostomLink>
+                            <CostomLink href="/Login">Login</CostomLink>
+                        </ul>
+                    }
+                </div>
+                
 
                 <div className='social-links'>
                     <a href={socialAccountUrls.facebook} target="_blank" rel="noreferrer noopener"><FontAwesomeIcon className="social-links-icons" icon={faFacebookSquare} /></a>
