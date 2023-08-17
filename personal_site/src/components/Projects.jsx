@@ -39,22 +39,25 @@ function Projects() {
 
 
   return (
-    <div className='projects'>
-      <h1>Here are my projects</h1>
+    <div className=''>
+      <div className="home-title">
+        <h3>Project</h3>
+      </div>
       <div className='project-list'>
 
         {
           projects.map((project, index) => (
             <div className='project' key={index}>
               <div className='project-head'>
-                <h2>{project.title}</h2>
-                <p>{project.year}</p>
+
+                <p>{project.title}</p>
+                <p style={{ fontSize: 14 }}>{project.year}</p>
               </div>
               <div className='project-info'>
                 <div className='project-description'>
                   {project.description.split('\n').map((line, index) => (<p key={index}>{line}</p>))}
                 </div>
-                {
+                {/* {
                   project.gallary.length > 0 &&
                   <div className='project-gallary'>
                     <ImageGallery items={project.gallary}
@@ -63,7 +66,7 @@ function Projects() {
                       showIndex={true}
                     />
                   </div>
-                }
+                } */}
                 {
                   project.urls.length > 0 &&
                   (
