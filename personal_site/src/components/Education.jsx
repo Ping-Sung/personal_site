@@ -15,14 +15,14 @@ function Education() {
         },
         {
             school: 'National Taichung University of Sci. and Tech.',
-            degree: 'Bachelor of Information Management',
+            degree: 'Bachelor of Information Management<br />Associate Degree of Information Management',
             date: 'Sept. 2013 – Jun. 2020',
             gpa: '3.98 / 4.0',
             badge: NUTC
         }
     ]
     function renderEducation() {
-        return education.map((edu, index) => {
+        return education.map((edu) => {
             return (
                 <div className="home-degree-content">
                     <div className="home-degree-content-image">
@@ -32,9 +32,11 @@ function Education() {
                     </div>
                     <div className="home-degree-content-word">
                         <div className="home-degree-content-word-head">
-                            <p>{edu.school}</p>
+                            <h5>{edu.school}</h5>
                             <p style={{ fontSize: 14 }} >{edu.date} </p>
                         </div>
+                        {/* {edu.degree.split('<br />').map((line, index) => (<p key={index}>{line}</p>))} */}
+
                         {edu.degree} <br />
                         GPA: {edu.gpa}
                     </div>

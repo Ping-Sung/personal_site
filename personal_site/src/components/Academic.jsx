@@ -2,14 +2,15 @@
 // import React from "react";
 import '../css/academic.css'
 import "react-image-gallery/styles/css/image-gallery.css";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 import ImageGallery from 'react-image-gallery';
 import { ShangdaImages } from '../ShangdaImages';
 
 export default function Academic() {
 
-    const publications_list = {
-        2020: [
+    const publications_list =
+        [
             {
                 img: null,
                 title: "Stress Level Classifier: Taiwanese College Table Tennis Athletes’ Electroencephalography Analysis Based on Decision Trees",
@@ -31,9 +32,6 @@ export default function Academic() {
                 publisher: "In Proceedings of the 2020 Asia Service Sciences and Software Engineering Conference (2020, May)",
                 gallary: ShangdaImages,
             },
-
-        ],
-        2022: [
             {
                 img: null,
                 title: "Semantic Segmentation and Model Acceleration for Guardrail Detection in Construction Sites",
@@ -66,33 +64,39 @@ export default function Academic() {
                 authors: "Tzou, T. L., Huang, C. H., Lai, Y. H., Tsai, M. H., Hsu, C. T., Cheng, P. S., & Lee, W. J.",
                 publisher: "In Innovative Computing: Proceedings of the 4th International Conference on Innovative Computing (IC 2021) (2022, January)",
                 gallary: [],
-            },
-        ],
-    }
+            }
+        ]
+
     return (
         <div className="academic">
-            <h1 className='academic-title'>Here are my academic publications</h1>
+            <div className="home-title">
+                <h3>Academic Publications</h3>
+            </div>
             <div className='publications'>
                 <div className='publication-by-year'>
-                    <div className="publication-year">
-                        <h2>2022</h2>
-                    </div>
+
                     {
-                        publications_list[2022].map((publication, index) => (
+                        publications_list.map((publication, index) => (
                             <div className="publication" key={index}>
 
                                 <div className="publication-content">
-                                    <h2 className="publication-title">{publication.title}</h2>
+                                    {/* <a href="publication.url"> */}
+                                    <h4 className="publication-title" onClick={() => (window.open(publication.url, '_blank'))}>
+                                        {publication.title}
+                                        <FontAwesomeIcon className="publication-links-icons" icon={faLink} />
+                                    </h4>
+                                    {/* </a> */}
+
                                     <p className="publication-authors">{publication.authors}</p>
                                     <p className="publication-publisher">{publication.publisher}</p>
                                     <p className="publication-abstrat">{publication.abstact}</p>
-                                    <div className="publication-links">
+                                    {/* <div className="publication-links">
 
-                                        <button className="publication-links-btn" onClick={() => (window.open(publication.url, '_blank'))}>arixv</button>
+                                        <button className="publication-links-btn" >arixv</button>
                                         {publication.github && <button className="publication-links-btn" onClick={() => (window.open(publication.github, '_blank'))}>github</button>}
-                                    </div>
+                                    </div> */}
                                 </div>
-                                {publication.gallary.length > 0 &&
+                                {/* {publication.gallary.length > 0 &&
                                     <div className="publication-image">
                                         <ImageGallery items={publication.gallary}
                                             showThumbnails={false}
@@ -100,48 +104,13 @@ export default function Academic() {
                                             showIndex={true}
                                         />
                                     </div>
-                                }
-                            </div>
-                        ))
-                    }
-
-                </div>
-                <div className='publication-by-year'>
-                    <div className="publication-year">
-                        <h2>2020</h2>
-                    </div>
-                    {
-                        publications_list[2020].map((publication, index) => (
-                            <div className="publication" key={index}>
-
-                                <div className="publication-content">
-                                    <h2 className="publication-title">{publication.title}</h2>
-                                    <p className="publication-authors">{publication.authors}</p>
-                                    <p className="publication-publisher">{publication.publisher}</p>
-                                    <p className="publication-abstrat">{publication.abstact}</p>
-                                    <div className="publication-links">
-
-                                        <button className="publication-links-btn" onClick={() => (window.open(publication.url, '_blank'))}>arixv</button>
-                                        {publication.github && <button className="publication-links-btn" onClick={() => (window.open(publication.github, '_blank'))}>github</button>}
-                                    </div>
-                                </div>
-                                {publication.gallary.length > 0 &&
-                                    <div className="publication-image">
-                                        <ImageGallery items={publication.gallary}
-                                            showThumbnails={false}
-                                            showBullets={true}
-                                            showIndex={true}
-                                        />
-                                    </div>
-                                }
+                                } */}
                             </div>
                         ))
                     }
 
                 </div>
             </div>
-
-
         </div>
     )
 }

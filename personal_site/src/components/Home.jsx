@@ -4,6 +4,7 @@ import '../css/home.css'
 import profileImg from '../assets/Small.jpeg'
 import Education from './Education'
 import Projects from './Projects'
+import Academic from './Academic'
 
 // import profileImg from 'https://drive.google.com/file/d/1Vere1yIeTlLz2d3ZiC816bvkQu7lm-Rv/view?usp=drive_link'
 
@@ -21,6 +22,7 @@ function Home() {
         </div>
         <Education />
         <Projects />
+        <Academic />
 
 
 

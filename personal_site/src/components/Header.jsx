@@ -55,8 +55,8 @@ function Header() {
         <div className='header'>
             <div className='header-content'>
                 <div className="header-upper">
-                    <Link to="/"><h1>Kevin Cheng</h1></Link>
-                    <h2>Full-Stack Developer <br />& AI Researcher</h2>
+                    <Link to="/"><h2>Kevin Cheng</h2></Link>
+                    <h3>Full-Stack Developer <br />& AI Researcher</h3>
                     <p>Passionate Full-Stack developer with 3+ years of experience integrating
                         business processes. Adept at utilizing Laravel, Django, and ReactJS to
                         deliver innovative solutions.</p>
@@ -80,7 +80,7 @@ function Header() {
                         </ul>
                     }
                 </div>
-                
+
 
                 <div className='social-links'>
                     <a href={socialAccountUrls.facebook} target="_blank" rel="noreferrer noopener"><FontAwesomeIcon className="social-links-icons" icon={faFacebookSquare} /></a>
