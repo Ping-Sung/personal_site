@@ -1,7 +1,7 @@
 // import React from 'react'
 import '../css/projects.css'
 import "react-image-gallery/styles/css/image-gallery.css";
-import ImageGallery from 'react-image-gallery';
+// import ImageGallery from 'react-image-gallery';
 import { ShangdaImages } from '../ShangdaImages';
 import { WaninImages } from '../WaninImages';
 
@@ -50,7 +50,7 @@ function Projects() {
             <div className='project' key={index}>
               <div className='project-head'>
 
-                <p>{project.title}</p>
+                <h5>{project.title}</h5>
                 <p style={{ fontSize: 14 }}>{project.year}</p>
               </div>
               <div className='project-info'>

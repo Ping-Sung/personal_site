@@ -4,7 +4,7 @@ import '../css/academic.css'
 import "react-image-gallery/styles/css/image-gallery.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
-import ImageGallery from 'react-image-gallery';
+// import ImageGallery from 'react-image-gallery';
 import { ShangdaImages } from '../ShangdaImages';
 
 export default function Academic() {
@@ -83,6 +83,7 @@ export default function Academic() {
                                     {/* <a href="publication.url"> */}
                                     <h4 className="publication-title" onClick={() => (window.open(publication.url, '_blank'))}>
                                         {publication.title}
+                                        &nbsp;
                                         <FontAwesomeIcon className="publication-links-icons" icon={faLink} />
                                     </h4>
                                     {/* </a> */}
