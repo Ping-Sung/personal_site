@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 // import ImageGallery from 'react-image-gallery';
 import { ShangdaImages } from '../ShangdaImages';
+import Expand from './Expand';
 
 export default function Academic() {
 
@@ -90,7 +91,11 @@ export default function Academic() {
 
                                     <p className="publication-authors">{publication.authors}</p>
                                     <p className="publication-publisher">{publication.publisher}</p>
-                                    <p className="publication-abstrat">{publication.abstact}</p>
+                                    <p className="publication-abstrat">
+                                        <Expand>
+                                            {publication.abstact}
+                                        </Expand>
+                                    </p>
                                     {/* <div className="publication-links">
 
                                         <button className="publication-links-btn" >arixv</button>

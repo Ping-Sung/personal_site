@@ -1,0 +1,13 @@
+.expand-btn {
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-position: under;
+}
