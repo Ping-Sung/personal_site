@@ -36,20 +36,26 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* align-items: flex-end; */
+    align-items: flex-end;
     height: auto;
     margin-bottom: 0.3rem;
-    color: #1D1128;
+    color: #DDFDFE;
 
+    font-style: italic;
+    font-weight: bold;
+
+}
+
+.project-head h5 {
+    margin: 0;
 }
 
 .project-head p {
-    /* margin-left: auto; */
-    font-size: 24px;
-    font-style: italic;
-    font-weight: bold;
+    margin-left: auto;
+    font-size: 0.7rem;
     margin: 0;
 }
+
 
 .project-info {
     display: flex;
@@ -69,15 +75,17 @@
 .project-links {
     display: flex;
     justify-content: flex-start;
+    margin-top: 0.8rem;
 }
 
 .project-links-btn {
-    margin-right: 20px;
+    font-size: 1rem;
+    margin-right: 3rem;
     border-radius: 5px;
     border: 2px solid #546A76;
     background-color: #E0E1E9;
     color: #546A76;
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
 }
 
 .project-links-btn:hover {

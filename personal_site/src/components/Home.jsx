@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 // import React from 'react'
 import '../css/home.css'
-import profileImg from '../assets/Small.jpeg'
+// import profileImg from '../assets/Small.jpeg'
 import Education from './Education'
 import Projects from './Projects'
 import Academic from './Academic'
