@@ -2,8 +2,7 @@
 
 Link: http://18.222.77.70/
 
-
-Remain:
+###Remain:
 1. Merge backend (Django)
 2. RWD (for cellphone)
 3. better styling
