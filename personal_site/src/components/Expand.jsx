@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../css/Expand.css'
 
 
 const Expand = ({ children, size = 25 }) => {
