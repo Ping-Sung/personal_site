@@ -30,10 +30,10 @@ function Header() {
     const [isAuthenticated, setIsAuthenticated] = React.useState(null);
     const loggedInUser = localStorage.getItem("authenticated");
     const socialAccountUrls = {
-        facebook: 'https://www.facebook.com/chieh.ying.1998/',
-        instagram: 'https://www.instagram.com/shiori_lai/',
-        github: 'https://github.com/jamie870116',
-        linkedin: 'https://www.linkedin.com/in/chiehying-lai/',
+        facebook: 'https://www.facebook.com/profile.php?id=100001397914168',
+        instagram: 'https://www.instagram.com/kevin5970403/',
+        github: 'https://github.com/Ping-Sung',
+        linkedin: 'https://www.linkedin.com/in/kevincheng840925/',
     }
 
     const navigate = useNavigate();
@@ -66,8 +66,8 @@ function Header() {
                             <CostomLink href="/Resume">Resume</CostomLink>
                             <CostomLink href="/Academic">Academic</CostomLink>
                             <CostomLink href="/Projects">Projects</CostomLink>
-                            <CostomLink href="/Blogs">Blogs</CostomLink>
-                            <CostomLink href="/CreateDiary">Create Diary</CostomLink>
+                            {/* <CostomLink href="/Blogs">Blogs</CostomLink> */}
+                            {/* <CostomLink href="/CreateDiary">Create Diary</CostomLink> */}
 
                         </ul>
                         :
@@ -75,8 +75,8 @@ function Header() {
                             <CostomLink href="/Resume">Resume</CostomLink>
                             <CostomLink href="/Academic">Academic</CostomLink>
                             <CostomLink href="/Projects">Projects</CostomLink>
-                            <CostomLink href="/Blogs">Blogs</CostomLink>
-                            <CostomLink href="/Login">Login</CostomLink>
+                            {/* <CostomLink href="/Blogs">Blogs</CostomLink> */}
+                            {/* <CostomLink href="/Login">Login</CostomLink> */}
                         </ul>
                     }
                 </div>

@@ -1,9 +1,10 @@
 // import React from 'react'
 import NCHU from '../assets/NCHU_Badge.png'
 import NUTC from '../assets/NUTC_Badge.png'
+import { forwardRef } from "react";
 
 
-function Education() {
+function Education(props, innerRef) {
 
     const education = [
         {
@@ -55,7 +56,7 @@ function Education() {
 
     return (
         <>
-            <div className="home-title">
+            <div className="home-title" ref={innerRef}>
                 <h3>Education</h3>
             </div>
 
@@ -65,4 +66,4 @@ function Education() {
     )
 }
 
-export default Education
+export default forwardRef(Education)

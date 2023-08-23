@@ -2,7 +2,7 @@
 import React from 'react'
 import '../css/resume.css'
 import { Document, Page } from 'react-pdf'
-import resume_pdf from '../assets/Jamie_Resume.pdf'
+import resume_pdf from '../assets/Kevin_Resume_software.pdf'
 import { pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
@@ -29,10 +29,10 @@ function Resume() {
             </Document>
           </div>
         </div>
-    </div>
+      </div>
       {/* <embed className='resume-file' src={resume_pdf} type="application/pdf" /> */}
     </div>
-    
+
   )
 }
 

@@ -20,8 +20,8 @@
     justify-content: flex-start;
     flex-direction: column;
     /* max-width: 60%; */
-    text-align: justify;
-    text-justify: auto;
+    /* text-align: justify; */
+    /* text-justify: auto; */
     /* margin-right: 5em; */
 }
 
@@ -46,7 +46,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 18px;
+    margin-bottom: 30px;
 }
 
 .home-degree-content-image {
