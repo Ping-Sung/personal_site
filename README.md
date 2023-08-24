@@ -1,6 +1,8 @@
 # This is my personal website
 
-Link: http://18.222.77.70/
+~~Link: http://18.222.77.70/~~
+I just purchased a domain name! Yayyy!
+The link is is now: http://kevinhomepage.com/
 
 
 ### Remain:
