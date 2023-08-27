@@ -25,3 +25,5 @@ dist-ssr
 
 GiscusConfigs.js
 ./personalSiteKey.pem
+
+*.py

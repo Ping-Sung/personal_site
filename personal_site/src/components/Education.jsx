@@ -6,44 +6,44 @@ import { api_path } from '../api_path'
 import React from 'react'
 
 function Education(props, innerRef) {
-    // const endpoint = api_path + "api/education/mixins/"
-    // const [education, setEducation] = React.useState([])
+    const endpoint = api_path + "api/education/mixins/"
+    const [education, setEducation] = React.useState([])
 
-    // React.useEffect(() => {
-    //     getEducation()
-    //     renderEducation()
-    // });
+    React.useEffect(() => {
+        getEducation()
+        renderEducation()
+    }, []);
 
-    // function getEducation() {
-    //     const requestOptions = {
-    //         method: "GET",
-    //         headers: { 'Content-Type': 'application/json' }
-    //     };
-    //     fetch(endpoint, requestOptions)
-    //         .then(res => res.json())
-    //         .then(data => setEducation(data))
-    //         .catch(err => console.log(err))
-    // }
+    function getEducation() {
+        const requestOptions = {
+            method: "GET",
+            headers: { 'Content-Type': 'application/json' }
+        };
+        fetch(endpoint, requestOptions)
+            .then(res => res.json())
+            .then(data => setEducation(data))
+            .catch(err => console.log(err))
+    }
 
-    const education = [
-        {
-            school: 'National Chung Hsing University',
-            degrees: ['Master of Business Administration in Management Information System'],
-            degree: 'Master of Business Administration in Management Information System',
-            date: 'Sept. 2020 – Jun. 2022',
-            gpa: '4.18 / 4.3',
-            badge: 'http://kevinhomepage.com/assets/NCHU_Badge-76064d3a.png'
-        },
-        {
-            school: 'National Taichung University of Sci. and Tech.',
-            degree: 'Bachelor of Information Management & Associate Degree of Information Management',
-            degrees: ['Bachelor of Information Management', ' Associate Degree of Information Management'],
-            date: 'Sept. 2013 – Jun. 2020',
-            gpa: '3.98 / 4.0',
-            badge: 'http://kevinhomepage.com/assets/NUTC_Badge-9909b182.png'
-        }
-    ]
-    console.log(NCHU)
+    // const education = [
+    //     {
+    //         school: 'National Chung Hsing University',
+    //         degrees: ['Master of Business Administration in Management Information System'],
+    //         degree: 'Master of Business Administration in Management Information System',
+    //         date: 'Sept. 2020 – Jun. 2022',
+    //         gpa: '4.18 / 4.3',
+    //         badge: 'http://kevinhomepage.com/assets/NCHU_Badge-76064d3a.png'
+    //     },
+    //     {
+    //         school: 'National Taichung University of Sci. and Tech.',
+    //         degree: 'Bachelor of Information Management & Associate Degree of Information Management',
+    //         degrees: ['Bachelor of Information Management', ' Associate Degree of Information Management'],
+    //         date: 'Sept. 2013 – Jun. 2020',
+    //         gpa: '3.98 / 4.0',
+    //         badge: 'http://kevinhomepage.com/assets/NUTC_Badge-9909b182.png'
+    //     }
+    // ]
+    // console.log(NCHU)
     function renderEducation() {
 
         return education.map((edu, idx) => {
