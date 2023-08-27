@@ -19,6 +19,16 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls')), # add all the urls from api/urls.py after the localhost -> localhost:8000/api/
-    path('api/diary/', include('diary.urls')), # add all the urls from diary/urls.py after the localhost -> localhost:8000/api/diary/
+    # add all the urls from api/urls.py after the localhost -> localhost:8000/api/
+    path('api/', include('api.urls')),
+    # add all the urls from diary/urls.py after the localhost -> localhost:8000/api/diary/
+    path('api/diary/', include('diary.urls')),
+    # add all the urls from metadata/urls.py after the localhost -> localhost:8000/api/metadata/
+    path('api/metadata/', include('metadata.urls')),
+    # add all the urls from experience/urls.py after the localhost -> localhost:8000/api/experience/
+    path('api/experience/', include('experience.urls')),
+    # add all the urls from education/urls.py after the localhost -> localhost:8000/api/education/
+    path('api/education/', include('education.urls')),
+    # add all the urls from academic/urls.py after the localhost -> localhost:8000/api/academic/
+    path('api/academic/', include('academic.urls')),
 ]

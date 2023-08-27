@@ -62,9 +62,8 @@ function Projects() {
         management of customer information, raw material procurement, and inventory control processes.\
         \n • Implemented an Model - view - controller(MVC) pattern using the PHP Laravel framework and was\
         responsible for backend development.',
-      gallary: ShangdaImages,
+      gallary: [],
       urls: [
-        { title: 'Link', url: 'https://www.shangda.com.tw/' },
       ]
     },
     {

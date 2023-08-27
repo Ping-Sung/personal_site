@@ -57,9 +57,7 @@ function Header() {
                 <div className="header-upper">
                     <Link to="/"><h2>Kevin Cheng</h2></Link>
                     <h3>Full-Stack Developer <br />& AI Researcher</h3>
-                    <p>Passionate Full-Stack developer with 3+ years of experience integrating
-                        business processes. Adept at utilizing Laravel, Django, and ReactJS to
-                        deliver innovative solutions.</p>
+                    <p>Laravel | Django | React | Pytorch, looking for (paid/unpaid) internship and entry level (Full-stack, AI) software engineer role.</p>
 
                     {isAuthenticated ?
                         <ul className='menu'>

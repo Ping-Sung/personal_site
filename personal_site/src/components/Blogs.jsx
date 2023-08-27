@@ -25,8 +25,7 @@ function Blogs() {
         };
         fetch(endpoint, requestOptions).then(res => res.json()).then(data => {
             setblogs(data)
-        })
-            .catch(err => console.log(err))
+        }).catch(err => console.log(err))
     }
 
 
