@@ -7,8 +7,9 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 // import ImageGallery from 'react-image-gallery';
 import { ShangdaImages } from '../ShangdaImages';
 import Expand from './Expand';
+import React from 'react'
 
-export default function Academic() {
+function Academic(props, innerRef) {
 
     const publications_list =
         [
@@ -21,7 +22,7 @@ export default function Academic() {
                 ",
                 url: "https://hdl.handle.net/11296/9tk8d7",
                 github: null,
-                authors: "Cheng, P. S.",
+                authors: "Cheng, P. S. (Thesis)",
                 publisher: "Dissertation in Graduate Institute of Management Information Systems at National Chung Hsing University, Taichung City. (2022, July)",
                 gallary: [],
             },
@@ -75,8 +76,8 @@ export default function Academic() {
 
 
     return (
-        <div className="academic">
-            <div className="home-title">
+        <div className="" >
+            <div className="home-title" ref={innerRef}>
                 <h3>Academic Publications</h3>
             </div>
             <div className='publications'>
@@ -123,3 +124,5 @@ export default function Academic() {
         </div>
     )
 }
+
+export default React.forwardRef(Academic);

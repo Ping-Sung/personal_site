@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../css/expand.css'
 
 
 const Expand = ({ children, size = 25 }) => {
@@ -9,6 +10,7 @@ const Expand = ({ children, size = 25 }) => {
     };
     const text_arr = children.split(" ");
     let text = expanded ? children : text_arr.slice(0, size).join(" ");
+    text = text + (expanded ? "" : "...");
 
 
     return (

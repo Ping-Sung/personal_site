@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react'
 import '../css/projects.css'
 import "react-image-gallery/styles/css/image-gallery.css";
 // import ImageGallery from 'react-image-gallery';
@@ -7,7 +7,7 @@ import { WaninImages } from '../WaninImages';
 
 
 
-function Projects() {
+function Projects(props, innerRef) {
   const projects = [
     {
       title: 'Private, military service',
@@ -89,7 +89,7 @@ function Projects() {
     const projectList = projects.map((project, index) => (
       <div className='project' key={index}>
         <div className='project-head'>
-          <h5>{project.title}</h5>
+          <h4>{project.title}</h4>
           <p style={{ fontSize: 14 }}>{project.year}</p>
         </div>
         <p className='project-company'>{project.subtitle}</p>
@@ -130,7 +130,7 @@ function Projects() {
 
 
   return (
-    <div className=''>
+    <div className='' ref={innerRef}>
       <div className="home-title">
         <h3>Experience</h3>
       </div>
@@ -140,5 +140,4 @@ function Projects() {
     </div>
   )
 }
-
-export default Projects
+export default React.forwardRef(Projects)

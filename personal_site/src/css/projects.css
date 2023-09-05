@@ -27,7 +27,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 35px;
     /* border-bottom: 2px solid #546A76; */
     text-align: justify;
     text-justify: auto;
@@ -97,7 +97,8 @@
 }
 
 .project-description p {
-    margin: 0;
+    /* margin: 0; */
     color:white;
+    line-height: 1.5rem;
     /* margin-bottom: 10px; */
 }

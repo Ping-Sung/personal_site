@@ -1,33 +1,23 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useRef } from 'react'
+import React from 'react'
 import '../css/home.css'
 // import profileImg from '../assets/Small.jpeg'
 import Education from './Education'
 import Projects from './Projects'
 import Academic from './Academic'
-import Test from './test'
+
 
 // import profileImg from 'https://drive.google.com/file/d/1Vere1yIeTlLz2d3ZiC816bvkQu7lm-Rv/view?usp=drive_link'
 
 
 
-function Home() {
-
-  const TestRef = useRef(null);
-  const educationRef = useRef(null);
-  const projectsRef = useRef(null);
-  const academicRef = useRef(null);
-
-  const handleNavigation = (targetRef) => {
-    targetRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
+function Home(props, innerRef) {
 
   return (
     <div className="home">
-      <div className="home-content">
+      <div className="home-content" ref={innerRef}>
         <div className='home-text'>
-          {/* <button onClick={() => handleNavigation(TestRef)}>Go to Test</button>
-          <button onClick={() => handleNavigation(educationRef)}>Go to Education</button> */}
+
           <p>
             A recent Management Information System Graduate with 3+ years of experience in software development,
             2+ years of experience in AI research and AI-based application development.
@@ -51,18 +41,13 @@ function Home() {
             your organization.
           </p>
         </div>
-        {/* <Test text="jjfiskjls;a" ref={TestRef} /> */}
-        <Education ref={educationRef} />
-        <Projects />
-        <Academic />
-
-
-
-
+        <Education ref={props.educationRef} />
+        <Projects ref={props.projectsRef} />
+        <Academic ref={props.academicRef} />
       </div>
     </div>
 
   )
 }
 
-export default Home
+export default React.forwardRef(Home)

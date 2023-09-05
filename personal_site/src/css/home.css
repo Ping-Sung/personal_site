@@ -19,6 +19,7 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    padding-top: 80px;
     /* max-width: 60%; */
     /* text-align: justify; */
     /* text-justify: auto; */
@@ -37,8 +38,9 @@
     width: 100%;
     border-bottom: 2px solid #DDFDFE;
     margin-bottom: 10px;
-    margin-top: 100px;
+    padding-top: 80px;
     color: #DDFDFE;
+    display: block;
     /* margin-right: 50px; */
 }
 

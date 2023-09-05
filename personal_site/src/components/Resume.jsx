@@ -20,14 +20,11 @@ function Resume() {
 
   return (
     <div className='resume'>
-      <h1>Here is my Resume</h1>
-      <div className="Example">
-        <div className="Example__container">
-          <div className="Example__container__document">
-            <Document file={resume_pdf} >
-              <Page pageNumber={pageNumber} />
-            </Document>
-          </div>
+      <div className="Example__container">
+        <div className="Example__container__document">
+          <Document file={resume_pdf} >
+            <Page pageNumber={pageNumber} />
+          </Document>
         </div>
       </div>
       {/* <embed className='resume-file' src={resume_pdf} type="application/pdf" /> */}

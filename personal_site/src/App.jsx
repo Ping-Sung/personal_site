@@ -10,17 +10,35 @@ import BlogDetail from "./components/BlogDetail";
 import Login from "./components/Login";
 import { Routes, Route } from "react-router-dom";
 import './App.css'
+import { useRef } from 'react'
+
 
 
 function App() {
+  const homeRef = useRef(null);
+  const educationRef = useRef(null);
+  const projectsRef = useRef(null);
+  const academicRef = useRef(null);
+  const refs = [
+    { name: 'Biography', ref: homeRef },
+    { name: 'Education', ref: educationRef },
+    { name: 'Projects', ref: projectsRef },
+    { name: 'Academic', ref: academicRef }
+  ]
 
   return (
     <div className="root-container">
-      <Header />
+      <Header
+        refs={refs} />
       <div className="container">
         <div className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home
+              educationRef={educationRef}
+              projectsRef={projectsRef}
+              academicRef={academicRef}
+              ref={homeRef}
+            />} />
             <Route path="/Projects" element={<Projects />} />
             <Route path="/Academic" element={<Academic />} />
             <Route path="/Resume" element={<Resume />} />

@@ -13,6 +13,7 @@
     /* padding: 0 50px; */
     /* float: left; */
     /* min-width: 230px; */
+    margin-right: 5rem;
     font-family: 'Vollkorn', serif !important;
 }
 
@@ -36,6 +37,10 @@
     color: #e0e1e9ff;
 }
 
+.hover:hover {
+    color: #ddfdfeff;
+}
+
 .header a:hover {
     text-decoration: none;
     color: #ddfdfeff;
@@ -46,9 +51,9 @@
     padding: 0;
 }
 
-.actived a {
-    color: #ddfdfeff;
-}
+/* .actived a {
+    color: red;
+} */
 
 .menu {
     font-size: 1.2rem;
@@ -60,13 +65,24 @@
 .menu-link {
     margin: 0;
 }
+.contact {
+    margin-top: auto;
+}
+
+.contact li{
+    padding-left: 10px;
+    display: flex;
+
+    align-items: center;
+ 
+}
 
 .social-links {
     height: 1.8em;
     display: flex;
     /* justify-content: space-between; */
     /* padding: 20px; */
-    margin-top: auto;
+    /* margin-top: auto; */
 }
 
 .social-links a {
