@@ -9,7 +9,7 @@ import { api_path } from '../api_path'
 
 export default function Login() {
 
-    const endpoint = api_path + "api/token/"
+    const endpoint = api_path + "/api/token/"
     const [isAuthenticated, setIsAuthenticated] = React.useState(localStorage.getItem(localStorage.getItem("authenticated") || false));
     const navigate = useNavigate();
 

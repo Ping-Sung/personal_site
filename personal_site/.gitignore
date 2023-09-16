@@ -27,3 +27,5 @@ GiscusConfigs.js
 ./personalSiteKey.pem
 
 *.py
+
+data.jsx

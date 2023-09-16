@@ -67,10 +67,17 @@
     padding-top: 10px;
 }
 
-.project-gallary {
+.project-gallery {
     width: 80%;
     height: 100%;
     margin: 20px auto;
+}
+
+.image-gallery-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 

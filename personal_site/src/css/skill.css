@@ -1,0 +1,9 @@
+.skill {
+    background-color: #48eaf3;
+    color: rgb(28, 102, 38);
+    padding: 5px 5px;
+    margin: 3px 5px;
+    width: auto;
+    display: inline-block;
+    border-radius: 15px;
+}

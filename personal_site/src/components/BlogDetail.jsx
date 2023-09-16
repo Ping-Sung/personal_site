@@ -14,7 +14,7 @@ export default function BlogDetail() {
     const blogID = useParams().id
     // console.log(blogID)
 
-    const endpoint = api_path + "api/diary/mixins/" + blogID + '/'
+    const endpoint = api_path + "/api/diary/mixins/" + blogID + '/'
     const [isEdit, setIsEdit] = React.useState(false)
     const [blogDetail, setBlogDetail] = React.useState({})
     const navigate = useNavigate();

@@ -8,6 +8,7 @@ import Blogs from "./components/Blogs";
 import CreateDiary from "./components/CreateDiary";
 import BlogDetail from "./components/BlogDetail";
 import Login from "./components/Login";
+import ProjectUpload from "./components/ProjectUpload";
 import { Routes, Route } from "react-router-dom";
 import './App.css'
 import { useRef } from 'react'
@@ -22,7 +23,7 @@ function App() {
   const refs = [
     { name: 'Biography', ref: homeRef },
     { name: 'Education', ref: educationRef },
-    { name: 'Projects', ref: projectsRef },
+    { name: 'Experience', ref: projectsRef },
     { name: 'Academic', ref: academicRef }
   ]
 
@@ -46,6 +47,7 @@ function App() {
             <Route path="/CreateDiary" element={<CreateDiary />} />
             <Route path="/Blogs/:id" element={<BlogDetail />} />
             <Route path="/Login" element={<Login />} />
+            <Route path="/ProjectUpload" element={<ProjectUpload />} />
           </Routes>
         </div>
 

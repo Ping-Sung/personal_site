@@ -85,6 +85,8 @@ function Header(props) {
                 <ul className='menu'>
                     {renderMenu(menuRefs)}
                     <CostomLink href="/Resume">Resume</CostomLink>
+                    {isAuthenticated && <CostomLink href="/ProjectUpload">Upload Experience</CostomLink>}
+
                 </ul>
 
                 <div className='contact'>
