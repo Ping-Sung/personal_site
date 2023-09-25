@@ -55,13 +55,18 @@ function Projects(props, innerRef) {
                 'Authorization': 'Bearer ' + isAuthenticated,
             }
         };
+        const endpoint = api_path + "/api/experience/mixins"
+        console.log(endpoint + '/' + id)
 
-        fetch(endpoint + id + '/', requestOptions)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
+        fetch(endpoint + '/' + id, requestOptions)
+            .then(res => {
+                console.log(res)
                 getProjects()
             })
+            // .then(data => {
+            //     console.log(data)
+            //     getProjects()
+            // })
             .catch(err => console.log(err));
     };
 
