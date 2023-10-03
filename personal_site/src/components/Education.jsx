@@ -2,6 +2,8 @@
 import { forwardRef } from "react";
 import { api_path } from '../api_path'
 import React from 'react'
+import NCHU_bedge from '../assets/NCHU_Badge.png'
+import NUTC_bedge from '../assets/NUTC_Badge.png'
 
 function Education(props, innerRef) {
     const endpoint = api_path + "/api/education/mixins/"

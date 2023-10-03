@@ -5,7 +5,6 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 // import ImageGallery from 'react-image-gallery';
-import { ShangdaImages } from '../ShangdaImages';
 import Expand from './Expand';
 import React, { useEffect } from 'react'
 import { api_path } from '../api_path';
