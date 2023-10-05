@@ -8,6 +8,7 @@ import NUTC_bedge from '../assets/NUTC_Badge.png'
 function Education(props, innerRef) {
     const endpoint = api_path + "/api/education/mixins/"
     const [education, setEducation] = React.useState([])
+    const badge = [NCHU_bedge, NUTC_bedge]
     React.useEffect(() => {
         getEducation()
     }, []);
@@ -29,7 +30,7 @@ function Education(props, innerRef) {
                 <div className="home-degree-content" key={idx}>
                     <div className="home-degree-content-image">
                         <a href="https://www.nchu.edu.tw/index1.php">
-                            <img src={edu.badge} alt="NCHU image" />
+                            <img src={badge[idx]} alt="NCHU image" />
                         </a>
                     </div>
                     <div className="home-degree-content-word">
