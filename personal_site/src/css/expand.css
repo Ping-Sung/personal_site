@@ -12,3 +12,12 @@
     text-decoration-color: white;
     text-underline-position: under;
 }
+
+.underline:hover {
+    text-decoration: none;
+    color: #ddfdfeff;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-position: under;
+
+}

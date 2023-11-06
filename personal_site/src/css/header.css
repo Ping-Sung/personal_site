@@ -37,8 +37,31 @@
     color: #e0e1e9ff;
 }
 
+.hover {
+    position: relative;
+    font-size: 1.4em;
+    transition: font-size 0.3s ease;
+}
+
+.hover::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ddfdfeff;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
 .hover:hover {
-    color: #ddfdfeff;
+    font-size: 1.8em;
+    /* 鼠标悬停时文本放大 */
+}
+
+.hover:hover::before {
+    width: 100%;
+    /* 鼠标悬停时底线从左到右出现 */
 }
 
 .header a:hover {

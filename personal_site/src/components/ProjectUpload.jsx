@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { api_path } from '../api_path'
 
 import "../css/upload.css";
@@ -31,6 +32,8 @@ const ProjectUpload = (props) => {
         gallary: "",
         urls: "",
         skills: "",
+        start_date: "",
+        categories: "",
     });
 
     const handleChange = ({ currentTarget: input }) => {
@@ -58,6 +61,8 @@ const ProjectUpload = (props) => {
         formData.append('year', data.year);
         formData.append('skills', data.skills);
         formData.append('description', data.description);
+        formData.append('start_date', data.start_date);
+        formData.append('categories', data.categories);
         console.log(images)
         for (let i = 0; i < images.length; i++) {
             formData.append("gallery", images[i]);
@@ -102,7 +107,7 @@ const ProjectUpload = (props) => {
                     </Form.Group>
                 </Row>
                 <Row>
-                    <Form.Group className="mb-3" controlId="titleInput">
+                    <Form.Group className="mb-3" controlId="subtitleInput">
                         <Form.Label>Subtitle</Form.Label>
                         <Form.Control
                             type="text"
@@ -116,21 +121,58 @@ const ProjectUpload = (props) => {
                     </Form.Group>
                 </Row>
                 <Row>
-                    <Form.Group className="mb-3" controlId="titleInput">
-                        <Form.Label>Year</Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="year"
-                            value={data.year}
-                            onChange={(e) => {
-                                handleChange(e);
-                            }}
-                            maxLength={80}
-                        />
-                    </Form.Group>
+                    <Col>
+                        <Form.Group className="mb-3" controlId="yearInput">
+                            <Form.Label>Year</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="year"
+                                value={data.year}
+                                onChange={(e) => {
+                                    handleChange(e);
+                                }}
+                                maxLength={80}
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group className="mb-3" controlId="start_dateInput">
+                            <Form.Label>Start Date</Form.Label>
+                            <Form.Control
+                                type="date"
+                                name="start_date"
+                                value={data.start_date}
+                                onChange={(e) => {
+                                    handleChange(e);
+                                }}
+                                maxLength={80}
+                            />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group className="mb-1" controlId="categoriesInput">
+                            <Form.Label>Categories</Form.Label>
+                            <Form.Control
+                                as="select"
+                                name="categories"
+                                onChange={(e) => {
+                                    handleChange(e);
+                                }}
+
+                                value={data.categories} // 使用value属性
+                            >
+                                <option value="">Experience</option>
+                                <option value="other">Other</option>
+                                <option value="project">Project</option>
+                            </Form.Control>
+                        </Form.Group>
+                    </Col>
+
+
+
                 </Row>
                 <Row>
-                    <Form.Group className="mb-3" controlId="titleInput">
+                    <Form.Group className="mb-3" controlId="skillsInput">
                         <Form.Label>Skills</Form.Label>
                         <Form.Control
                             type="text"
@@ -144,7 +186,7 @@ const ProjectUpload = (props) => {
                 </Row>
                 <Row>
                     <Form.Group controlId="formFile" className="mb-3">
-                        <Form.Label>gallary</Form.Label>
+                        <Form.Label>Gallary</Form.Label>
                         <Form.Control
                             type="file"
                             name="gallary"
@@ -169,6 +211,7 @@ const ProjectUpload = (props) => {
                     />
 
                 </Form.Group>
+
                 <Button
                     variant="primary"
                     type="submit"

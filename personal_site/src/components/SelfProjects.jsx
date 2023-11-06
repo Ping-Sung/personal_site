@@ -10,7 +10,7 @@ import { api_path } from '../api_path'
 
 
 
-function Projects(props, innerRef) {
+function SelfProjects(props, innerRef) {
 
     const [projects, setProjects] = useState([])
     const [isAuthenticated, setIsAuthenticated] = React.useState(null);
@@ -33,7 +33,7 @@ function Projects(props, innerRef) {
 
         fetch(endpoint, requestOptions)
             .then(res => res.json())
-            .then(data => filterProjects(data, ""))
+            .then(data => filterProjects(data, "project"))
             .then(data => setProjects(data))
             .catch(err => console.log(err));
     };
@@ -41,11 +41,11 @@ function Projects(props, innerRef) {
 
     // filter category, only reander the category that is selected
     const filterProjects = (data, name) => {
-
+        console.log(data)
         const res = []
         for (let i = 0; i < data.length; i++) {
-            console.log(data[i].categories)
-            if (data[i].categories === name || data[i].categories === null) {
+
+            if (data[i].categories === name) {
                 res.push(data[i])
             }
         }
@@ -152,7 +152,7 @@ function Projects(props, innerRef) {
     return (
         <div className='' ref={innerRef}>
             <div className="home-title">
-                <h3>Experience</h3>
+                <h3>Projects</h3>
             </div>
             <div className='project-list'>
                 {renderProject(projects)}
@@ -160,4 +160,4 @@ function Projects(props, innerRef) {
         </div>
     )
 }
-export default React.forwardRef(Projects)
+export default React.forwardRef(SelfProjects)
