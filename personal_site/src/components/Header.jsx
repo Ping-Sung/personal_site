@@ -80,7 +80,7 @@ function Header(props) {
                 <div className="header-upper">
                     <Link to="/"><h2>Kevin Cheng</h2></Link>
                     <h3>Full-Stack Developer <br />& AI Researcher</h3>
-                    <p>Laravel | Django | React | Pytorch, looking for (paid/unpaid) internship and entry level (Full-stack, AI) software engineer role.</p>
+                    <p> Laravel | Django | React | Pytorch, 3yr SWE experience and 2yr AI application development experience, looking for internship and software engineer role.</p>
                 </div>
                 <ul className='menu'>
                     {renderMenu(menuRefs)}
